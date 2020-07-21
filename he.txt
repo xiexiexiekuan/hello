@@ -2,3 +2,11 @@
 123
 
 我来啦！冲鸭！
+
+git pull origin时出现冲突
+原因：同一个文件，本地与远程不一致，直接pull时报错
+解决：放弃本地修改，使远程库内容强制覆盖本地代码
+git fetch --all　　 //只是下载代码到本地，不进行合并操作
+git reset --hard origin/master 　　//把HEAD指向最新下载的版本
+
+git push

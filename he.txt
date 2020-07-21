@@ -1,7 +1,4 @@
-这是一个测试文本！
-123
-
-我来啦！冲鸭！
+﻿这是一个大家都要认真阅读的文本！
 
 git pull origin时出现冲突
 原因：同一个文件，本地与远程不一致，直接pull时报错
@@ -9,4 +6,14 @@ git pull origin时出现冲突
 git fetch --all　　 //只是下载代码到本地，不进行合并操作
 git reset --hard origin/master 　　//把HEAD指向最新下载的版本
 
-git push
+
+当别人先一步修改了he.txt时，你再修改提交：
+git add he.txt
+git commit -m "456789"
+git push origin master    然后会报错版本不一致，建议你先pull
+此时可以git pull origin，报错见上文，
+建议git pull origin master    会自动合并本地修改与远程修改，然后手动打开解决冲突
+手动解决冲突后，重新
+git add he.txt
+git commit -m "456789"
+git push origin master
